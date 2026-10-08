@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</head>
+<style>
+   
+    body{
+        background-blend-mode: color-burn;
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+    }
+    .navi{
+        background-color:rgb(221, 239, 255);
+        margin: 0;
+        display: flex;
+        top: 0;
+        width: 100%;
+        height: 4cm;
+        position: fixed;
+        z-index: 1000;
+        
+    }
+    .logo{
+        display: flex;
+        align-items: center;
+    }
+    .menu{
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        padding-left: 10cm;
+        gap: 20px;
+        font-size: large;
+        color: white;
+        text-decoration: none;
+    }
+    a{
+        color: blue;
+        text-decoration: none;
+    }
+    .logobus{
+        animation: moving 6s alternate infinite ease-in;
+    }
+    .card{
+        gap: 10px;
+        border-radius: 20px;
+        width: 5cm;
+    }
+    .card-group{
+        padding: 10px;
+        gap: 50px;
+        border-radius: 10px;
+        animation: slide 5s infinite ease-in-out alternate  ;
+        top: 8cm;
+    }
+
+    .mycard{
+        overflow: hidden;
+        width: 80%;
+        background-color: aliceblue;
+        border-radius: 20px;
+        display: flex;
+        justify-content: center;
+        
+    }
+    @keyframes moving {
+        from{
+            transform: translate(-12cm);
+        }
+        to{
+            transform: translate(12cm);
+        }
+    }
+    @keyframes slide{
+        from{
+            transform: translate(-3cm);
+        }
+        to{
+            transform: translate(3cm);
+            
+        }
+    }
+    .mybus{
+        width: 80%;
+        height: 11cm;
+        background-color: aliceblue;
+        border-radius: 20px;
+        padding: 20px;
+        top: 3cm;
+    }
+    .mytrain{
+        width: 80%;
+        height: 15cm;
+        background-color: aliceblue;
+        border-radius: 20px;
+        padding: 20px;
+        top: 3cm;
+    }
+    .myhotel{
+        width: 80%;
+        height: 12cm;
+        background-color: aliceblue;
+        border-radius: 20px;
+        padding: 20px;
+        top: 3cm;
+    }
+    .myabout{
+        width: 80%;
+        height: 31cm;
+        background-color: aliceblue;
+        border-radius: 20px;
+        padding: 20px;
+        top: 3cm;
+     
+    }
+    h2{
+        display: flex;
+        justify-content: center;
+    }
+    p{
+        display: flex;
+        justify-content: center;
+    }
+    #home{
+        width: 100%;
+        height: 45cm;
+        top: 7cm;
+        padding-top: 5cm;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    #bus{
+        width: 100%;
+        height: 15cm;
+        top: 30px;
+        padding-top: 20px;
+        margin: auto;
+        display: flex;
+       justify-content: center;
+       padding-top: 5cm;
+    }
+    #train{
+        width: 100%;
+        height: 15cm;
+        top: 30px;
+        padding-top: 20px;
+        margin: auto;
+        display: flex;
+       justify-content: center;
+      
+       padding-top: 5cm;
+    }
+    #Hotel{
+        width: 100%;
+        height: 6cm;
+        top: 30px;
+        padding-top: 20px;
+        margin: auto;
+        display: flex;
+       justify-content: center;
+       padding-top: 5cm;
+    }
+    #about{
+        width: 100%;
+        height: 20cm;
+        top: 50px;
+        padding-top: 20px;
+        margin: auto;
+        display: flex;
+       justify-content: center;
+       padding-top: 5cm;
+    }
+    .foot{
+        height: 4cm;
+        width: 100%;
+        background-color: rgb(198, 228, 255);
+        position: relative;
+        display: flex;
+       flex-direction: column;
+    }
+    @media (max-width:700px) {
+        .logo{
+            width: 100px;
+        }
+        .menu{
+            width: 100%;
+            overflow-x: auto;
+
+        }
+        footer{
+            min-height: 4cm;
+            max-height: fit-content;
+        }
+        
+        @keyframes slide {
+            from{
+                transform: translateY(-2cm);
+            }
+            to{
+                transform: translateY(2cm);
+            }
+            
+        }
+        
+    }
+</style>
+<body>
+    <nav class="navi">
+        <div class="logo">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 180" width="380" height="180" role="img" aria-label="yticket logo">
+            <defs>
+            <mask id="notch">
+            <rect width="380" height="180" fill="#fff"/>
+            <circle cx="30" cy="90" r="16" fill="#000"/>
+            <circle cx="350" cy="90" r="16" fill="#000"/>
+            </mask>
+            </defs>
+            <rect x="30" y="30" width="320" height="120" rx="16" fill="#534AB7" mask="url(#notch)"/>
+            <line x1="82" y1="48" x2="82" y2="132" stroke="#CECBF6" stroke-width="2" stroke-dasharray="6 6"/>
+            <text x="56" y="112" text-anchor="middle" font-family="Georgia, serif" font-size="46" font-weight="700" fill="#FFFFFF">y</text>
+            <text x="100" y="110" font-family="Helvetica, Arial, sans-serif" font-size="48" font-weight="700" fill="#FFFFFF" letter-spacing="1.5">ticket</text>
+            </svg>
+        </div>
+        <div class="menu">
+            <a href="#home">Home</a>
+            <a href="#bus">Bus ticket</a>
+            <a href="#train">Train ticket</a>
+            <a href="#Hotel">Hotel</a>
+            <a href="#about">About us</a>
+        </div>
+    </nav>
+    <section id="home">
+        <div class="logobus">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="100 45 245 130" width="245" height="130" role="img" aria-label="Blue bus">
+            <rect x="110" y="55" width="225" height="90" rx="16" fill="#1e5fd8"/>
+            <rect x="110" y="55" width="225" height="14" rx="7" fill="#0b2a66"/>
+            <g fill="#e6f0ff">
+                <rect x="125" y="78" width="36" height="28" rx="4"/>
+                <rect x="169" y="78" width="36" height="28" rx="4"/>
+                <rect x="213" y="78" width="36" height="28" rx="4"/>
+                <rect x="257" y="78" width="36" height="28" rx="4"/>
+                <path d="M301,78 H322 a6,6 0 0 1 6,6 V106 H301 Z"/>
+            </g>
+            <rect x="110" y="116" width="225" height="8" fill="#ffffff"/>
+            <circle cx="328" cy="132" r="5" fill="#f2b134"/>
+            <g fill="#0b2a66"><circle cx="160" cy="145" r="20"/><circle cx="285" cy="145" r="20"/></g>
+            <g fill="#e6f0ff"><circle cx="160" cy="145" r="8"/><circle cx="285" cy="145" r="8"/></g>
+            </svg>
+        </div>
+        <div class="mycard">
+            <div class="card-group">
+            <div class="card">
+                <img src="h1.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                <h5 class="card-title">Get 50% on your favaroite place</h5>
+                <p class="card-text"></p>
+                <p class="card-text"><small class="text-muted">Last updated 3 hours ago</small></p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="h2.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                <h5 class="card-title">Book your ticket now to hawai!</h5>
+                <p class="card-text"></p>
+                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="h3.webp" class="card-img-top" alt="...">
+                <div class="card-body">
+                <h5 class="card-title">Get exciting offers now!</h5>
+                <p class="card-text"></p>
+                <p class="card-text"><small class="text-muted">Last updated 1 hour ago</small></p>
+                </div>
+            </div>
+            </div>
+        </div>
+        <br>
+        <br>
+        <h1>Book Your Bus, Train and Hotel in One Place</h1>
+        <p>Plan your whole trip with yticket. Search, and book in just a few clicks.</p>
+        <br>
+        <h3>Our Services</h3>
+        <p>Choose from AC, non-AC, sleeper and seater buses on popular routes. Check timings and prices before you book.</p>
+        <p>Search trains by station and date, pick your class and book your seat easily.</p>
+        <p>Find comfortable rooms in your destination city. Stay options are available for every budget.</p>
+        <br>
+        <h3>Why Choose yticket?</h3>
+        <p>Everything in one place: book bus, train and hotel on a single website.</p>
+        <p>Clear prices: see the fare before you book.</p>
+        <p>Simple booking: find and book your ticket in a few steps.</p>
+        <p>Works on all devices: use it on your mobile, tablet or computer.</p>
+        <p>Friendly support: we are here to help if you have any questions.</p>
+        <br>
+        <h3>How It Works</h3>
+        <p>Search: enter your route, date or city.</p>
+        <p>Choose: compare the options and select the one you like.</p>
+        <p>Book: confirm your booking and get ready to travel.</p>
+        <br>
+        <h3>Closing Call to Action</h3>
+        <p>Ready to plan your next trip?</p>
+        <p>Start booking with yticket today.</p>
+    </section>
+    <section id="bus">
+        <div class="mybus">
+            <div class="busticket" style="display: flex; justify-content: center;">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 100" width="300" height="100" role="img" aria-label="busticket">
+                <path d="M22,10 H278 a12,12 0 0 1 12,12 V40 a10,10 0 0 0 0,20 V78 a12,12 0 0 1 -12,12 H22 a12,12 0 0 1 -12,-12 V60 a10,10 0 0 0 0,-20 V22 a12,12 0 0 1 12,-12 Z" fill="#10283f"/>
+                <text x="150" y="65" text-anchor="middle" font-family="'Trebuchet MS',Arial,sans-serif" font-size="42" font-weight="800">
+                <tspan fill="#f2b134">bus</tspan><tspan fill="#ffffff">ticket</tspan>
+                </text>
+                </svg>
+            </div>
+            <br>
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">From</label>
+            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter your starting point">
+         </div>
+        <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">To</label>
+            <input type="text" placeholder="Enter your destination">
+        </div>
+         <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Date & Time</label>
+            <input type="datetime-local">
+        </div>
+        <br>
+        <button type="button" class="btn btn-primary" style="display: flex; justify-content: center;">Submit</button>
+        </div>
+    </section>
+    <section id="train">
+        <div class="mytrain">
+            <div class="busticket" style="display: flex; justify-content: center;">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 100" width="300" height="100" role="img" aria-label="trainticket">
+                <path d="M22,10 H278 a12,12 0 0 1 12,12 V40 a10,10 0 0 0 0,20 V78 a12,12 0 0 1 -12,12 H22 a12,12 0 0 1 -12,-12 V60 a10,10 0 0 0 0,-20 V22 a12,12 0 0 1 12,-12 Z" fill="#10283f"/>
+                <text x="150" y="64" text-anchor="middle" font-family="'Trebuchet MS',Arial,sans-serif" font-size="37" font-weight="800">
+                <tspan fill="#f2b134">train</tspan><tspan fill="#ffffff">ticket</tspan>
+                </text>
+                </svg>
+            </div>
+            <br>
+        
+        
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">From</label>
+            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter your boarding point">
+         </div>
+        <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">To</label>
+            <input type="text" placeholder="Enter your destination">
+        </div>
+         <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Date & Time</label>
+            <input type="datetime-local">
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Train name</label>
+            <input type="text" placeholder="Enter Train name">
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Train number</label>
+            <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="Enter train number">
+         </div>
+        <br>
+        <button type="button" class="btn btn-primary" style="display: flex; justify-content: center;">Submit</button>
+    </section>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <section id="Hotel">
+        <div class="myhotel">
+            <div class="busticket" style="display: flex; justify-content: center;">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 100" width="300" height="100" role="img" aria-label="hotelbooking">
+                <path d="M22,10 H278 a12,12 0 0 1 12,12 V40 a10,10 0 0 0 0,20 V78 a12,12 0 0 1 -12,12 H22 a12,12 0 0 1 -12,-12 V60 a10,10 0 0 0 0,-20 V22 a12,12 0 0 1 12,-12 Z" fill="#10283f"/>
+                <text x="150" y="63" text-anchor="middle" font-family="'Trebuchet MS',Arial,sans-serif" font-size="34" font-weight="800">
+                <tspan fill="#f2b134">hotel</tspan><tspan fill="#ffffff">booking</tspan>
+                </text>
+                </svg>
+            </div>
+            <br>
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Hotel name</label>
+            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter hotel name">
+         </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+            <label class="form-check-label" for="flexRadioDefault1">
+                AC
+            </label>
+            </div>
+            <div class="form-check">
+            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+            <label class="form-check-label" for="flexRadioDefault2">
+                Non-AC
+            </label>
+        </div>
+         <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Date & Time</label>
+            <input type="datetime-local">
+        </div>
+         <br>
+        <button type="button" class="btn btn-primary" style="display: flex; justify-content: center;">Submit</button>
+        </div>
+    </section>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <section id="about">
+        <div class="myabout">
+             <div class="aboutus" style="display: flex; justify-content: center;">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 100" width="300" height="100" role="img" aria-label="aboutus">
+                <path d="M22,10 H278 a12,12 0 0 1 12,12 V40 a10,10 0 0 0 0,20 V78 a12,12 0 0 1 -12,12 H22 a12,12 0 0 1 -12,-12 V60 a10,10 0 0 0 0,-20 V22 a12,12 0 0 1 12,-12 Z" fill="#10283f"/>
+                <text x="150" y="65" text-anchor="middle" font-family="'Trebuchet MS',Arial,sans-serif" font-size="42" font-weight="800">
+                <tspan fill="#f2b134">about</tspan><tspan fill="#ffffff">us</tspan>
+                </text>
+                </svg>
+            </div>
+            <br>
+            <br>
+            <div class="mytext" style="display: flex; justify-content: center;">
+            <div class="text">
+            
+            <h2>Who we are</h2>
+            <p>yticket is an online travel booking website where you can book bus tickets, train tickets and hotel rooms in one place. We built yticket so that planning a trip does not mean visiting many different websites. Search, compare and book everything for your journey in a few simple steps.</p>
+            <br>
+            <h2>Our mission</h2>
+            <p>To make travel easy and stress-free for everyone by giving clear information, fair prices and a simple booking experience.</p>
+            <br>
+            <h2>Our vision</h2>
+            <p>To become a trusted travel partner for every traveller, whether they are going to work, studying in another city or taking a holiday.</p>
+            <br>
+            <h2>What we offer</h2>
+            <p>Bus booking: choose from AC, non-AC, sleeper and seater buses on popular routes.</p>
+            <p>Train booking: search trains by station and date, and pick your preferred class.</p>
+            <p>Hotel booking: find rooms in your destination city for every budget.</p>
+            <br>
+            <h2>Why choose us</h2>
+            <p>Bus, train and hotel booking on a single website.</p>
+            <p>Clear prices, so you know the fare before you book.</p>
+            <p>Easy to use on mobile, tablet and computer.</p>
+            <p>A simple booking process that takes only a few minutes.</p>
+            <p>Friendly support whenever you need help.</p>
+            <br>
+            <h2>Contact us</h2>
+            <p>Email: supportyticket@gmail.com</p>
+            <p>Phone: +91 00000 00000</p>
+            </div>
+            </div>
+        </div>
+    </section>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+     <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+<footer class="foot">
+<p  style="display: flex; justify-content: center;">© 2026 yticket. All rights reserved.
+Terms and Conditions | Privacy Policy</p>
+
+<a href="h.html" style="display: flex; justify-content: center;">help</a>
+<a href="a.html" style="display: flex; justify-content: center;">about us</a>
+<a href="c.html" style="display: flex; justify-content: center;">contact us</a>
+<a href="t.html" style="display: flex; justify-content: center;">terms and conditions</a>
+</footer>
+</body>
+</html>
